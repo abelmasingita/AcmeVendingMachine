@@ -1,0 +1,6 @@
+@AcmeVendingMachine.Server_HostAddress = http://localhost:5136
+
+GET {{AcmeVendingMachine.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

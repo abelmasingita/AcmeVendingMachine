@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34601.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeVendingMachine.Server", "AcmeVendingMachine.Server\AcmeVendingMachine.Server.csproj", "{A1DDDDB9-69DD-4E9E-B539-05E5C2F5532F}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "acmevendingmachine.client", "acmevendingmachine.client\acmevendingmachine.client.esproj", "{FE85FA12-B884-4FAF-9A87-6CC3349DA908}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1DDDDB9-69DD-4E9E-B539-05E5C2F5532F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1DDDDB9-69DD-4E9E-B539-05E5C2F5532F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1DDDDB9-69DD-4E9E-B539-05E5C2F5532F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1DDDDB9-69DD-4E9E-B539-05E5C2F5532F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE85FA12-B884-4FAF-9A87-6CC3349DA908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE85FA12-B884-4FAF-9A87-6CC3349DA908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE85FA12-B884-4FAF-9A87-6CC3349DA908}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FE85FA12-B884-4FAF-9A87-6CC3349DA908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE85FA12-B884-4FAF-9A87-6CC3349DA908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE85FA12-B884-4FAF-9A87-6CC3349DA908}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACB68057-4EB1-4939-8770-44F0E133CA41}
+	EndGlobalSection
+EndGlobal
