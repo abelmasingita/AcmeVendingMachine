@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "^17.1.0",
     "@angular/router": "^17.1.0",
     "jest-editor-support": "*",
-    "primeng": "^17.15.0",
     "run-script-os": "*",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
