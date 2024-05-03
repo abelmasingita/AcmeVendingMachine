@@ -19,17 +19,30 @@
     <div class="w-100 ven-primary m-2">
       <h5>Selected Item</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <p class="h6">CocaCola Can</p>
+        <p class="h6">
+          {{ product?.name }} : {{ selectedCurrency === "USD" ? "$" : "£" }}
+          {{ product?.price }}
+        </p>
       </div>
     </div>
     <div class="w-100 ven-primary m-2">
       <h5>Change</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <p class="h6">CocaCola Can</p>
+        <ul>
+          <li *ngFor="let coin of change; let i = index">
+            Coin {{ i + 1 }} : {{ coin }} Cents
+          </li>
+        </ul>
       </div>
     </div>
     <div class="d-flex justify-content-between m-2">
-      <button type="submit" class="btn ven-button">Purchase</button>
+      <button
+        type="submit"
+        [disabled]="parseFloat(product?.price || '0') > tenderedAmount"
+        class="btn ven-button"
+      >
+        Purchase
+      </button>
       <div class="dropdown">
         <button
           class="btn ven-button dropdown-toggle"
@@ -37,7 +50,7 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Select Currency
+          Select Currency : {{ selectedCurrency }}
         </button>
         <ul class="dropdown-menu">
           <li>
@@ -53,3 +66,12 @@
     </div>
   </div>
 </form>
+
+<div
+  class="alert alert-warning position-fixed top-50 start-50 translate-middle w-50"
+  role="alert"
+  *ngIf="showAlert && tenderedAmount < parseFloat(product?.price || '0')"
+>
+  Tendered Amount must be greater than Product Price, select another item or
+  insert another Coin
+</div>

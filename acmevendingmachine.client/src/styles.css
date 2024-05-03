@@ -14,3 +14,7 @@
   background-color: #f58533;
   color: white;
 }
+
+.product {
+  cursor: pointer;
+}
