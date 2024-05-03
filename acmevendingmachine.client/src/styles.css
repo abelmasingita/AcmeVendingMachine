@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+.ven-primary {
+  color: #f58533;
+}
+
+.ven-border {
+  border-radius: 8px;
+  border: 1px solid #f58533;
+  background-color: white;
+}
+
+.ven-button {
+  background-color: #f58533;
+  color: white;
+}
