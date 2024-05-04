@@ -34,3 +34,13 @@ Usage
 2. Enter the tendered amount and complete the purchase
 3. Click Purchase Button and Your change will be displayed.
 4. If Tendered Amount is less than the purchase price, an alert will be displayed and purchase button disabled.
+
+
+Figma Designs
+
+https://www.figma.com/file/N9RDwQf7rVRYOp7wTJnQ3M/Mobile-Vending?type=design&node-id=0-1&mode=design&t=6G0BK2LsIcEN6AmP-0
+
+![Mobile Vending](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/4c30de67-b594-4a62-9ed5-5a1c229ed82d)
+
+
+
