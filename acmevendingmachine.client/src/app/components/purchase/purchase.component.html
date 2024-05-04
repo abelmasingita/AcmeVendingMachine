@@ -4,7 +4,8 @@
       <h5>Tender Amount</h5>
       <input
         type="number"
-        class="w-100 bg-body-secondary p-3 border-1 fw-bold ven-border rounded ven-primary"
+        min="0"
+        class="w-100 bg-body-secondary p-3 border-1 fw-bold ven-border rounded ven-seconday"
         [(ngModel)]="tenderedAmount"
         name="tenderedAmount"
         required
@@ -13,18 +14,20 @@
     <div class="w-100 ven-primary m-2">
       <h5>Messages</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <p class="h6" *ngIf="purchasedMessage; else visitMessage">
+        <p class="h6 ven-seconday" *ngIf="purchasedMessage; else visitMessage">
           Thank you for purchasing our product!
         </p>
         <ng-template #visitMessage>
-          <p class="h6">Thank you for visiting our Vending Machine!</p>
+          <p class="h6 ven-seconday">
+            Thank you for visiting our Vending Machine!
+          </p>
         </ng-template>
       </div>
     </div>
     <div class="w-100 ven-primary m-2">
       <h5>Selected Item</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <p class="h6">
+        <p class="h6 ven-seconday">
           {{ product?.name }}
           {{ product ? (selectedCurrency === "USD" ? ": $" : ": £") : "" }}
           {{ product?.price }}
@@ -34,7 +37,7 @@
     <div class="w-100 ven-primary m-2">
       <h5>Change</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <ul *ngIf="showChange">
+        <ul *ngIf="showChange" class="ven-seconday">
           <li *ngFor="let coin of change; let i = index">
             Coin {{ i + 1 }} : {{ coin }} Cents
           </li>

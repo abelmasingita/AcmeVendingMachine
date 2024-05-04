@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row p-3">
     <div
-      class="col-lg-6"
+      class="col-lg-6 mb-1"
       style="
         overflow-y: auto;
         max-height: 100vh;
@@ -20,12 +20,11 @@
             quantity="{{ product.quantity }}"
             imageUrl="{{ product.imageUrl }}"
             id="{{ product.id }}"
-            (selected)="onProductSelected()"
           ></app-product>
         </div>
       </div>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 mb-1">
       <app-purchase
         class="ml-2"
         style="position: sticky; top: 0"

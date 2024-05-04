@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
 import { IProduct } from '../../utils/Interfaces/IProduct';
-import { products } from '../../../assets/data/products';
-import { SharedService } from '../../services/shared.service';
+import { HttpClient } from '@angular/common/http';
+import { baseUrl } from '../../utils/url';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  products: IProduct[] = products;
+  products: IProduct[] = [];
+  baseUrl = baseUrl;
+  constructor(private http: HttpClient) {
+    this.getProducts();
+  }
 
-  constructor(private sharedService: SharedService) {}
-
-  onProductSelected() {
-    //access the product details from the shared service
-    this.sharedService.currentProductDetails.subscribe((product) => {
-      //console.log(product);
-    });
+  getProducts() {
+    this.http.get<IProduct[]>(`${baseUrl}/api/Product/Product`).subscribe(
+      (result) => {
+        this.products = result;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }

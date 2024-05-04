@@ -1,11 +1,4 @@
-import {
-  Component,
-  Output,
-  OnInit,
-  EventEmitter,
-  OnChanges,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Output, OnInit, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { baseUrl } from '../../utils/url';
 import { SharedService } from '../../services/shared.service';
@@ -15,7 +8,7 @@ import { IProduct } from '../../utils/Interfaces/IProduct';
   selector: 'app-purchase',
   templateUrl: './purchase.component.html',
 })
-export class PurchaseComponent implements OnInit, OnChanges {
+export class PurchaseComponent implements OnInit {
   selectedCurrency: string = 'USD'; //default to USD
   tenderedAmount: number = 0;
   purchaseAmount: number = 0;
@@ -46,21 +39,9 @@ export class PurchaseComponent implements OnInit, OnChanges {
       }
     );
 
-    this.sharedService.changeCurrency(this.selectedCurrency);
     this.selected.emit();
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    // Check if selectedCurrency has changed
-    if (
-      changes['selectedCurrency'] &&
-      changes['selectedCurrency'].currentValue !==
-        changes['selectedCurrency'].previousValue
-    ) {
-      this.sharedService.changeCurrency(this.selectedCurrency);
-      this.selected.emit();
-    }
-    console.log('Called');
-  }
+
   constructor(private http: HttpClient, private sharedService: SharedService) {}
 
   getChange() {

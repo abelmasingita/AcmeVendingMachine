@@ -1,4 +1,5 @@
 using AcmeVendingMachine.Server.Services;
+using AcmeVendingMachine.Server.Utility.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<VendingMachineService>();
+builder.Services.AddSingleton<Products>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",

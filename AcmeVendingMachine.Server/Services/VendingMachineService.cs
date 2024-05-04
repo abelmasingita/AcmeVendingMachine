@@ -3,7 +3,7 @@
     public class VendingMachineService
     {
         private readonly Dictionary<string, int[]> _coinDenominations;
-        private readonly Dictionary<int, int> _coinInventory;
+
 
         public VendingMachineService()
         {
@@ -13,7 +13,7 @@
                 { "GBP", new int[] { 1, 2, 5, 10, 20, 50 } }, // British Pound
             };
 
-            _coinInventory = new Dictionary<int, int>();        }
+        }
 
         public int[] CalculateChange(string currency, double purchaseAmount, double tenderAmount)
         {
