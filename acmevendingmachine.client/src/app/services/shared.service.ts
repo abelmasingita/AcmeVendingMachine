@@ -13,6 +13,10 @@ export class SharedService {
   private currency = new BehaviorSubject<any>(null);
   currencyDetails = this.currency.asObservable();
 
+  //search input
+  private searchTerm = new BehaviorSubject<any>(null);
+  currentSearchTerm = this.searchTerm.asObservable();
+
   constructor() {}
 
   changeProductDetails(product: any) {
@@ -21,5 +25,9 @@ export class SharedService {
 
   changeCurrency(curr: any) {
     this.currency.next(curr);
+  }
+
+  changeSearchTerm(term: string) {
+    this.searchTerm.next(term);
   }
 }

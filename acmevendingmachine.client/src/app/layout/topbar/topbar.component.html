@@ -3,9 +3,13 @@
   style="background-color: #f58533"
 >
   <div class="container px-3 px-md-4">
-    <a class="navbar-brand text-white">Acme Vending Machine</a>
+    <!-- Wrap the brand in a div with class "col-6" -->
+    <div class="col-6">
+      <a class="navbar-brand text-white">Acme Vending Machine</a>
+    </div>
+
     <button
-      class="navbar-toggler"
+      class="navbar-toggler mb-1"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -16,16 +20,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="navbar-nav me-auto mb-2 mb-lg-0"></div>
-      <form class="d-flex" role="search">
+      <!-- Wrap the search input in a div with class "col-6" -->
+      <div class="col-12 d-flex justify-content-end">
         <input
-          class="form-control me-2"
+          class="form-control"
           type="search"
           placeholder="Search"
           aria-label="Search"
+          (input)="onSearch($event)"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </div>
     </div>
   </div>
 </nav>
