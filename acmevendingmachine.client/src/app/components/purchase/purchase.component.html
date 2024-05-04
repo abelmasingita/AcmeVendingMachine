@@ -13,14 +13,20 @@
     <div class="w-100 ven-primary m-2">
       <h5>Messages</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <p class="h6">Thank you for purchasing our product!</p>
+        <p class="h6" *ngIf="purchasedMessage; else visitMessage">
+          Thank you for purchasing our product!
+        </p>
+        <ng-template #visitMessage>
+          <p class="h6">Thank you for visiting our Vending Machine!</p>
+        </ng-template>
       </div>
     </div>
     <div class="w-100 ven-primary m-2">
       <h5>Selected Item</h5>
       <div class="w-100 bg-body-secondary p-3 border">
         <p class="h6">
-          {{ product?.name }} : {{ selectedCurrency === "USD" ? "$" : "£" }}
+          {{ product?.name }}
+          {{ product ? (selectedCurrency === "USD" ? ": $" : ": £") : "" }}
           {{ product?.price }}
         </p>
       </div>
@@ -28,7 +34,7 @@
     <div class="w-100 ven-primary m-2">
       <h5>Change</h5>
       <div class="w-100 bg-body-secondary p-3 border">
-        <ul>
+        <ul *ngIf="showChange">
           <li *ngFor="let coin of change; let i = index">
             Coin {{ i + 1 }} : {{ coin }} Cents
           </li>
@@ -54,9 +60,7 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" (click)="selectedCurrency = 'USD'" selected
-              >USD</a
-            >
+            <a class="dropdown-item" (click)="selectedCurrency = 'USD'">USD</a>
           </li>
           <li>
             <a class="dropdown-item" (click)="selectedCurrency = 'GBP'">GBP</a>

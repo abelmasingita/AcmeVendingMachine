@@ -15,6 +15,23 @@
   color: white;
 }
 
+.ven-button:hover {
+  background-color: #16181b;
+  color: white;
+}
+
 .product {
   cursor: pointer;
+}
+.dropdown-menu {
+  background-color: #16181b;
+}
+.dropdown-item {
+  cursor: pointer;
+  background-color: #16181b;
+  color: white;
+}
+.dropdown-item:hover {
+  background-color: #f58533;
+  color: white;
 }
