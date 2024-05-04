@@ -42,7 +42,9 @@ export class PurchaseComponent implements OnInit {
     this.selected.emit();
   }
 
-  constructor(private http: HttpClient, private sharedService: SharedService) {}
+  constructor(private http: HttpClient, private sharedService: SharedService) {
+    this.sharedService.changeCurrency(this.selectedCurrency);
+  }
 
   getChange() {
     this.http
@@ -66,5 +68,10 @@ export class PurchaseComponent implements OnInit {
 
   parseFloat(num: string) {
     return parseFloat(num);
+  }
+
+  setCurrency(curr: string) {
+    this.selectedCurrency = curr;
+    this.sharedService.changeCurrency(curr);
   }
 }

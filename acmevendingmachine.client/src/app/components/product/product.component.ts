@@ -11,12 +11,15 @@ export class ProductComponent implements OnInit {
   @Input() price: string = '';
   @Input() quantity: string = '';
   @Input() id: string = '';
-  currency: any;
+  currency: string = 'USD';
 
-  @Output() selected = new EventEmitter<void>();
   constructor(private sharedService: SharedService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sharedService.currencyDetails.subscribe((curr) => {
+      this.currency = curr;
+    });
+  }
 
   selectProduct() {
     const productDetails = {
@@ -26,6 +29,5 @@ export class ProductComponent implements OnInit {
       quantity: this.quantity,
     };
     this.sharedService.changeProductDetails(productDetails);
-    this.selected.emit();
   }
 }
