@@ -9,19 +9,33 @@ namespace AcmeVendingMachine.Server.Controllers
     [ApiController]
     public class Product : ControllerBase
     {
-        private readonly Products products;
+        private readonly ProductService products;
 
-        public Product(Products products)
+        public Product(ProductService products)
         {
             this.products = products;
         }
 
-        [HttpGet("Product")]
-        public IActionResult GetProducts()
+        [HttpGet("Products")]
+        public ActionResult GetProducts()
         {
             try
             {
-                var products = this.products.getProducts();
+                var products = this.products.GetAllProducts();
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("ProductById")]
+        public ActionResult GetProductById(string id)
+        {
+            try
+            {
+                var products = this.products.GetProductById(id);
                 return Ok(products);
             }
             catch (Exception ex)

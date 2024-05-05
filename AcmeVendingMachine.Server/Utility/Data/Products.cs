@@ -1,9 +1,11 @@
-﻿namespace AcmeVendingMachine.Server.Utility.Data
+﻿using AcmeVendingMachine.Server.Model;
+
+namespace AcmeVendingMachine.Server.Utility.Data
 {
-    public class Products
+    public class HardCodedProducts
     {
         //hardcoded data
-        public List<Product> getProducts()
+        public List<Product> Products()
         {
             var products = new List<Product>
             {
@@ -66,16 +68,5 @@
             };
             return products;
         }
-
     }
-
-    public class Product
-    {
-        public string Id { get; set; }
-        public string Price { get; set; }
-        public string Quantity { get; set; }
-        public string Name { get; set; }
-        public string ImageUrl { get; set; }
-    }
-
 }

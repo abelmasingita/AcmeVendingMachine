@@ -24,7 +24,7 @@ export class HomeComponent {
   }
 
   getProducts() {
-    return this.http.get<IProduct[]>(`${baseUrl}/api/Product/Product`).pipe(
+    return this.http.get<IProduct[]>(`${baseUrl}/api/Product/Products`).pipe(
       map((result) => {
         return result;
       })

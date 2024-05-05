@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<VendingMachineService>();
-builder.Services.AddSingleton<Products>();
+builder.Services.AddScoped<ProductService>();
 
 builder.Services.AddCors(options =>
 {
