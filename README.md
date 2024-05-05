@@ -43,4 +43,30 @@ https://www.figma.com/file/N9RDwQf7rVRYOp7wTJnQ3M/Mobile-Vending?type=design&nod
 ![Mobile Vending](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/4c30de67-b594-4a62-9ed5-5a1c229ed82d)
 
 
+Solution - Code Explanation
+
+![image](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/6064a469-25a8-4aac-bf56-b6f20b106c8e)
+
+On the Picture above you will see 3 projects.
+
+1. acmevendingmachine.client - Angular FrontEnd
+2. AcmeVendingMachine.Server - C# - ASP.NET Web API
+3. AcmeVendingMachineTest - C# XUnit Tests
+
+Build and run the Server project
+![image](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/b149dd60-5b3d-4211-8585-630ccae39a02)
+
+Swagger API Documentation - https://localhost:7135/swagger/index.html
+![image](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/403d3de3-e26d-4b3d-8a6d-0e7cb0b42c12)
+
+Angular/Client Frontend - https://127.0.0.1:4200
+
+![image](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/e267b905-94b7-4f40-8018-122afb75c033)
+
+Change After Product Purchase
+![image](https://github.com/abelmasingita/AcmeVendingMachine/assets/60102940/3b29b622-4c13-4404-bd65-3d99d55f0046)
+
+
+
+
 
