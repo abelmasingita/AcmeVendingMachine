@@ -15,7 +15,7 @@
 
         }
 
-        public int[] CalculateChange(string currency, double purchaseAmount, double tenderAmount)
+        public virtual int[] CalculateChange(string currency, double purchaseAmount, double tenderAmount)
         {
             int[] denominations = _coinDenominations[currency];
             int changeAmount = (int)(Math.Round(tenderAmount - purchaseAmount, 2) * 100); // convert to cents

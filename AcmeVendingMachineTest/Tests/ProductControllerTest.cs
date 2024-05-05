@@ -1,37 +1,51 @@
 using AcmeVendingMachine.Server.Controllers;
+using AcmeVendingMachine.Server.Model;
 using AcmeVendingMachine.Server.Services;
 using Microsoft.AspNetCore.Mvc;
+using Moq;
 
 namespace AcmeVendingMachineTest.Tests
 {
     public class ProductControllerTest
     {
-        Product product;
-        ProductService productService;
+        private readonly Mock<ProductService> _mockProductsService;
+        private readonly ProductController _controller;
         public ProductControllerTest()
         {
-            productService = new ProductService();
-            product = new Product(productService);
+            _mockProductsService = new Mock<ProductService>();
+            _controller = new ProductController(_mockProductsService.Object);
         }
 
         [Fact]
-        public void GetAllProducts()
+        public void GetProducts_ReturnsOkResult_WhenCalled()
         {
-            //Arrange
-            //Act
-            var result = product.GetProducts();
-            //Assert
-            Assert.IsType<OkObjectResult>(result);
+            // Arrange
+            var products = new List<Product> { new Product { Id = "1", Name = "CocaCola" } };
+            _mockProductsService.Setup(service => service.GetAllProducts()).Returns(products);
 
-            var list = result as OkObjectResult;
+            // Act
+            var result = _controller.GetProducts();
 
-            //Assert.IsType<List<Product>>(list.Value);
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            var model = Assert.IsAssignableFrom<IEnumerable<Product>>(okResult.Value);
+            Assert.Equal(products, model);
+        }
 
+        [Fact]
+        public void GetProductById_ReturnsOkResult_WhenCalled()
+        {
+            // Arrange
+            var product = new Product { Id = "1", Name = "CocaCola" };
+            _mockProductsService.Setup(service => service.GetProductById("1")).Returns(product);
 
+            // Act
+            var result = _controller.GetProductById("1");
 
-            //var listBooks = list.Value as List<Product>;
-
-            //Assert.Equal(5, listBooks.Count);
+            // Assert
+            var okResult = Assert.IsType<OkObjectResult>(result);
+            var model = Assert.IsAssignableFrom<Product>(okResult.Value);
+            Assert.Equal(product, model);
         }
     }
 }

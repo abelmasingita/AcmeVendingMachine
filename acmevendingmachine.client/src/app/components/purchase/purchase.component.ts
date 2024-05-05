@@ -32,7 +32,7 @@ export class PurchaseComponent implements OnInit {
         // Hide the alert after 2 seconds
         setTimeout(() => {
           this.showAlert = false;
-        }, 5000);
+        }, 3000);
       },
       (error) => {
         console.error('Error receiving product details:', error);

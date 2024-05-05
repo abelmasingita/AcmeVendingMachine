@@ -6,11 +6,11 @@ namespace AcmeVendingMachine.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VendingMachine : ControllerBase
+    public class VendingMachineController : ControllerBase
     {
         private readonly VendingMachineService vendingMachine;
 
-        public VendingMachine(VendingMachineService vendingMachine)
+        public VendingMachineController(VendingMachineService vendingMachine)
         {
             this.vendingMachine = vendingMachine;
         }

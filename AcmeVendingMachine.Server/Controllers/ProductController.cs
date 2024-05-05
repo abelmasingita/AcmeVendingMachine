@@ -7,11 +7,11 @@ namespace AcmeVendingMachine.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class Product : ControllerBase
+    public class ProductController : ControllerBase
     {
         private readonly ProductService products;
 
-        public Product(ProductService products)
+        public ProductController(ProductService products)
         {
             this.products = products;
         }
