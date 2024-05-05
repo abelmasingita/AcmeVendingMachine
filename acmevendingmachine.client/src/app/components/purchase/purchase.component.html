@@ -47,7 +47,7 @@
     <div class="d-flex justify-content-between m-2" *ngIf="product">
       <button
         type="submit"
-        [disabled]="parseFloat(product?.price || '0') > tenderedAmount"
+        [disabled]="parseFloat(product.price || '0') > tenderedAmount"
         class="btn ven-button"
       >
         Purchase
