@@ -21,15 +21,15 @@ Technologies Used
 
 Installation
 
-Clone the repository
-Navigate to the project/solution directory
+Clone the repository.
+Navigate to the project/solution directory.
 Start the server on Visual studio by clicking the start button and both client(Angular) and Server(ASP.NET) apps will run.
-Navigate to https://localhost:7135/swagger/index.html to access backend APIs
-Navigate to https://127.0.0.1:4200/ to access frontend
+Navigate to https://localhost:7135/swagger/index.html to access backend APIs.
+Navigate to https://127.0.0.1:4200/ to access frontend.
 
 Usage
 
-1. Select a product from the list
+1. Search or Select a product from the list
 2. Enter the tendered amount and complete the purchase
 3. Click Purchase Button and Your change will be displayed.
 4. If Tendered Amount is less than the purchase price, an alert will be displayed and purchase button disabled.
