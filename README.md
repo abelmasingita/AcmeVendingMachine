@@ -17,8 +17,7 @@ Technologies Used
 2. ASP.NET Core
 3. HTML/CSS
 4. TypeScript
-5. SQL Server
-6. Boostrap 5
+5. Boostrap 5
 
 Installation
 
